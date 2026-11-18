@@ -1,0 +1,323 @@
+{
+  "description": {
+    "message": "Use the local GeminiForge server to work with files, run commands, and control your computer from Gemini."
+  },
+  "language": {
+    "message": "Language"
+  },
+  "mode": {
+    "message": "Execution mode"
+  },
+  "enabled": {
+    "message": "Enable"
+  },
+  "manual": {
+    "message": "Ask at every step"
+  },
+  "readonly": {
+    "message": "Ask except for read-only tools"
+  },
+  "auto": {
+    "message": "Run all automatically"
+  },
+  "modeNote": {
+    "message": "This setting controls the extension’s JSON tools. Gemini handles MCP approvals separately."
+  },
+  "autoPrompt": {
+    "message": "Add tool instructions to new chats"
+  },
+  "autoHint": {
+    "message": "Prepend tool instructions to the first message in a new chat"
+  },
+  "prompt": {
+    "message": "Insert tool instructions"
+  },
+  "stop": {
+    "message": "Stop"
+  },
+  "shot": {
+    "message": "Test screenshot"
+  },
+  "reload": {
+    "message": "Reload extension and refresh page"
+  },
+  "run": {
+    "message": "Run"
+  },
+  "always": {
+    "message": "Allow for this chat"
+  },
+  "alwaysHint": {
+    "message": "Allow this tool for the rest of this chat"
+  },
+  "skip": {
+    "message": "Skip"
+  },
+  "halt": {
+    "message": "Stop all"
+  },
+  "idle": {
+    "message": "Ready"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "noResponse": {
+    "message": "No response"
+  },
+  "updated": {
+    "message": "The extension was updated. Refresh this page."
+  },
+  "noEditor": {
+    "message": "Gemini’s message field was not found."
+  },
+  "noUpload": {
+    "message": "Upload button not found."
+  },
+  "noImageInput": {
+    "message": "Image upload field not found."
+  },
+  "consent": {
+    "message": "Accept the upload consent dialog in Gemini."
+  },
+  "missingImage": {
+    "message": "The image did not appear in the message field."
+  },
+  "cancelSend": {
+    "message": "Send canceled because the input mode or chat changed."
+  },
+  "sendTimeout": {
+    "message": "Send is unavailable. The image may still be uploading."
+  },
+  "generating": {
+    "message": "Gemini is responding…"
+  },
+  "completed": {
+    "message": "Finished after {n} tool rounds."
+  },
+  "error": {
+    "message": "Error: {detail}"
+  },
+  "continueRounds": {
+    "message": "Completed {n} consecutive rounds. Continue?"
+  },
+  "stopped": {
+    "message": "Stopped"
+  },
+  "waiting": {
+    "message": "Awaiting approval for {tool}"
+  },
+  "confirmTool": {
+    "message": "Tool {i} of {n}: {tool}"
+  },
+  "userStop": {
+    "message": "Stopped by user"
+  },
+  "allowed": {
+    "message": "Allowed {tool} for this chat"
+  },
+  "denied": {
+    "message": "The user declined this tool. Try another approach or ask the user."
+  },
+  "skipped": {
+    "message": "Skipped {tool}"
+  },
+  "running": {
+    "message": "Running {tool}"
+  },
+  "returned": {
+    "message": "Round {n} results sent. Waiting for Gemini…"
+  },
+  "result": {
+    "message": "[GeminiForge results]"
+  },
+  "uploading": {
+    "message": "Uploading screenshot…"
+  },
+  "lastShot": {
+    "message": "Attached the last screenshot taken after {tool}."
+  },
+  "latestShot": {
+    "message": "Attached the latest screenshot."
+  },
+  "failedShot": {
+    "message": "Screenshot upload failed: {detail}"
+  },
+  "next": {
+    "message": "Continue based on these results. When finished, summarize in plain text without further tool blocks."
+  },
+  "noPrompt": {
+    "message": "Could not load tool instructions."
+  },
+  "request": {
+    "message": "My request: "
+  },
+  "injected": {
+    "message": "Tool instructions added automatically"
+  },
+  "injectFailed": {
+    "message": "Could not add tool instructions: {detail}"
+  },
+  "busy": {
+    "message": "A tool is running. Stop it first."
+  },
+  "hasPrompt": {
+    "message": "Tool instructions are already in the message field."
+  },
+  "inserted": {
+    "message": "Instructions inserted. Enter your request and send it."
+  },
+  "testing": {
+    "message": "Testing screenshot…"
+  },
+  "attached": {
+    "message": "Screenshot added to the draft."
+  },
+  "connected": {
+    "message": "Local server connected ({cwd})"
+  },
+  "offline": {
+    "message": "Local server unavailable. Run start.bat."
+  },
+  "dialogTitle": {
+    "message": "GeminiForge approval"
+  },
+  "dialogAsk": {
+    "message": "Gemini wants to run {tool}"
+  },
+  "allow": {
+    "message": "Allow"
+  },
+  "allowTimed": {
+    "message": "Allow this tool for 30 minutes"
+  },
+  "deny": {
+    "message": "Deny"
+  },
+  "countdown": {
+    "message": "Automatically deny in {n} s"
+  },
+  "authTitle": {
+    "message": "GeminiForge authorization"
+  },
+  "linkApp": {
+    "message": "Connect to GeminiForge"
+  },
+  "accessRequest": {
+    "message": "{client} is requesting access to this computer to read and write files, run commands, and control the mouse and keyboard."
+  },
+  "pairCode": {
+    "message": "Enter the pairing code shown in the GeminiForge server window."
+  },
+  "allowLink": {
+    "message": "Allow connection"
+  },
+  "redirectTo": {
+    "message": "After approval, you’ll return to {dest}."
+  },
+  "wrongCode": {
+    "message": "Incorrect pairing code."
+  },
+  "tooMany": {
+    "message": "Too many attempts. Try again in 10 minutes."
+  },
+  "unknownClient": {
+    "message": "Unknown client_id"
+  },
+  "badRedirect": {
+    "message": "This redirect_uri is not allowed."
+  },
+  "onlyCode": {
+    "message": "Only response_type=code is supported."
+  },
+  "needPkce": {
+    "message": "Public clients must use PKCE."
+  },
+  "srvPortInUse": {
+    "message": "Error: port {port} is already in use by another program. Set the GF_PORT environment variable to use another port (also change it in the extension's manifest.json and background.js)."
+  },
+  "pressEnterToExit": {
+    "message": "Press Enter to exit..."
+  },
+  "srvStarted": {
+    "message": "GeminiForge local server is running: {url}"
+  },
+  "srvCwd": {
+    "message": "Default working folder: {path}"
+  },
+  "srvStop": {
+    "message": "Emergency stop: fling the mouse into any screen corner. Close this window to stop the server."
+  },
+  "mcpTitle": {
+    "message": "GeminiForge MCP server (for Gemini's @ custom app)"
+  },
+  "mcpUrl": {
+    "message": "MCP URL: {url}"
+  },
+  "mcpNoTailscale": {
+    "message": "(no Tailscale URL detected)"
+  },
+  "mcpPairCode": {
+    "message": "Pairing code: {code}"
+  },
+  "mcpApproval": {
+    "message": "Approval mode: {mode} (change it in server/mcp_config.json)"
+  },
+  "mcpWebConfirm": {
+    "message": "Gemini web confirmation: {mode}"
+  },
+  "mcpStop": {
+    "message": "Emergency stop for mouse actions: fling the mouse into a screen corner. Close this window to stop."
+  },
+  "mcpClientRegistered": {
+    "message": "OAuth client registered: {name} ({hosts})"
+  },
+  "mcpWrongCode": {
+    "message": "Someone entered a wrong pairing code"
+  },
+  "mcpLinked": {
+    "message": "Authorized \"{name}\" to connect"
+  },
+  "mcpDenied": {
+    "message": "User denied {tool}"
+  },
+  "bkTooLarge": {
+    "message": " (file is over {mb} MB; content not backed up)"
+  },
+  "bkSaved": {
+    "message": " (backed up as {id}; restore with restore_backup)"
+  },
+  "bkNone": {
+    "message": "No backups."
+  },
+  "bkWasMissing": {
+    "message": "did not exist (restore = delete the file)"
+  },
+  "bkNotCopied": {
+    "message": "too large, not backed up"
+  },
+  "bkHeader": {
+    "message": "Newest first:"
+  },
+  "bkBadId": {
+    "message": "Invalid backup id: {id} (example: 20261103-011819-001)"
+  },
+  "bkNotFound": {
+    "message": "Backup {id} not found; look up ids with list_backups."
+  },
+  "bkNoContent": {
+    "message": "Backup {id} has no content (the file was too large) and cannot be restored."
+  },
+  "bkRestored": {
+    "message": "Restored {path} to its content from before {time}"
+  },
+  "bkDeleted": {
+    "message": "{path} did not exist before, so it was deleted (its content is backed up)"
+  },
+  "bkNothing": {
+    "message": "{path} did not exist then and does not exist now; nothing to restore"
+  },
+  "bkUndo": {
+    "message": "{msg}. To undo this restore: restore_backup {id}"
+  }
+}
