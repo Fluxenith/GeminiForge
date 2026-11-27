@@ -1,0 +1,83 @@
+# Builds and tests the server on Windows, macOS and Linux and packs one zip
+# per system: the repository plus the prebuilt server in server/.
+# A pushed tag such as v1.3.0 also attaches the zips to that GitHub release
+# (create the release first, for example with gh release create).
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: windows-x64, os: windows-latest, target: x86_64-pc-windows-msvc, exe: geminiforge-server.exe, test: true }
+          - { name: macos-arm64, os: macos-latest, target: aarch64-apple-darwin, exe: geminiforge-server, test: true }
+          - { name: macos-x64, os: macos-latest, target: x86_64-apple-darwin, exe: geminiforge-server, test: false }
+          # musl: one static program that runs on any Linux distribution
+          - { name: linux-x64, os: ubuntu-latest, target: x86_64-unknown-linux-musl, exe: geminiforge-server, test: true }
+          - { name: linux-arm64, os: ubuntu-24.04-arm, target: aarch64-unknown-linux-musl, exe: geminiforge-server, test: true }
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        run: |
+          rustup update stable --no-self-update
+          rustup default stable
+          rustup target add ${{ matrix.target }}
+
+      - name: Test
+        if: matrix.test
+        working-directory: server
+        # the desktop tests (desktop.rs, ui_tools.rs) need a real screen, so they run locally only
+        run: cargo test --target ${{ matrix.target }} --lib --test server_tools --test mcp -- --test-threads=1
+
+      - name: Build
+        working-directory: server
+        run: |
+          # no build machine paths in the program
+          flags="--remap-path-prefix=$GITHUB_WORKSPACE=. --remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=~/.cargo"
+          if [ "$RUNNER_OS" = Windows ]; then flags="$flags -C link-arg=/PDBALTPATH:%_PDB%"; fi
+          RUSTFLAGS="$flags" cargo build --release --target ${{ matrix.target }}
+
+      - name: Pack
+        run: |
+          version="${GITHUB_REF_NAME}"
+          case "$GITHUB_REF" in refs/tags/*) ;; *) version="dev-${GITHUB_SHA::7}" ;; esac
+          zipname="GeminiForge-$version-${{ matrix.name }}.zip"
+          mkdir -p dist/GeminiForge
+          git archive --format=tar HEAD | tar -x -C dist/GeminiForge
+          cp "server/target/${{ matrix.target }}/release/${{ matrix.exe }}" dist/GeminiForge/server/
+          cd dist
+          if [ "$RUNNER_OS" = Windows ]; then
+            pwsh -NoProfile -Command "Compress-Archive -Path GeminiForge -DestinationPath '$zipname'"
+          else
+            chmod +x GeminiForge/server/${{ matrix.exe }} GeminiForge/*.sh
+            zip -qr "$zipname" GeminiForge
+          fi
+          echo "ZIP=dist/$zipname" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GeminiForge-${{ matrix.name }}
+          path: ${{ env.ZIP }}
+
+      - name: Attach to the release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" "$ZIP" --clobber

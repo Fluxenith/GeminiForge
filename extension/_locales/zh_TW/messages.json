@@ -1,0 +1,452 @@
+{
+  "description": {
+    "message": "讓 Gemini 網頁透過本機 GeminiForge 伺服器讀寫檔案、執行指令與操作電腦。"
+  },
+  "language": {
+    "message": "語言"
+  },
+  "mode": {
+    "message": "執行模式"
+  },
+  "enabled": {
+    "message": "啟用"
+  },
+  "manual": {
+    "message": "每一步都要確認"
+  },
+  "readonly": {
+    "message": "唯讀自動，其餘確認"
+  },
+  "auto": {
+    "message": "全部自動執行"
+  },
+  "modeNote": {
+    "message": "此模式只控制外掛 JSON 工具；MCP 授權仍由 Gemini 確認。"
+  },
+  "autoPrompt": {
+    "message": "新對話自動帶入工具說明"
+  },
+  "autoHint": {
+    "message": "在新對話送出第一則訊息時，自動在前面加上工具說明"
+  },
+  "notify": {
+    "message": "回覆完成時通知"
+  },
+  "notifyHint": {
+    "message": "Gemini 回覆完成、需要你確認或出錯時跳出桌面通知。「只在離開分頁時」：你切到別的分頁或程式才通知；「一律通知」：看著這個分頁也通知"
+  },
+  "notifyOff": {
+    "message": "關閉"
+  },
+  "notifyAway": {
+    "message": "只在離開分頁時"
+  },
+  "notifyAlways": {
+    "message": "一律通知"
+  },
+  "notifyReply": {
+    "message": "Gemini 已回覆完成"
+  },
+  "notifyTest": {
+    "message": "測試通知"
+  },
+  "notifyTestBody": {
+    "message": "這是 GeminiForge 的測試通知。"
+  },
+  "notifyTestSent": {
+    "message": "已送出測試通知。沒看到的話，請檢查 Windows 的通知設定和「勿擾」。"
+  },
+  "notifyFailed": {
+    "message": "通知失敗：{detail}"
+  },
+  "prompt": {
+    "message": "插入工具說明"
+  },
+  "stop": {
+    "message": "停止"
+  },
+  "shot": {
+    "message": "測試截圖"
+  },
+  "reload": {
+    "message": "重新載入外掛並重新整理頁面"
+  },
+  "run": {
+    "message": "執行"
+  },
+  "always": {
+    "message": "本對話都允許"
+  },
+  "alwaysHint": {
+    "message": "這個對話裡同一個工具不再詢問"
+  },
+  "skip": {
+    "message": "略過"
+  },
+  "halt": {
+    "message": "全部停止"
+  },
+  "idle": {
+    "message": "待命中"
+  },
+  "disabled": {
+    "message": "已關閉"
+  },
+  "noResponse": {
+    "message": "沒有回應"
+  },
+  "updated": {
+    "message": "外掛已更新，請重新整理此頁面。"
+  },
+  "noEditor": {
+    "message": "找不到 Gemini 輸入框"
+  },
+  "noUpload": {
+    "message": "找不到上傳按鈕"
+  },
+  "noImageInput": {
+    "message": "找不到圖片上傳欄位"
+  },
+  "consent": {
+    "message": "請在 Gemini 的上傳同意視窗按「同意」。"
+  },
+  "missingImage": {
+    "message": "圖片沒有出現在輸入框"
+  },
+  "cancelSend": {
+    "message": "輸入模式或對話已變更，已取消傳送"
+  },
+  "sendTimeout": {
+    "message": "傳送按鈕無法使用，圖片可能仍在上傳"
+  },
+  "generating": {
+    "message": "Gemini 回覆中…"
+  },
+  "stalled": {
+    "message": "Gemini 超過 {s} 秒沒有回應，已停止並重新要求"
+  },
+  "stallNudge": {
+    "message": "[GeminiForge] 上一則回覆卡住，沒有產生任何內容。請根據上面最新的結果繼續下一步。"
+  },
+  "stallGiveUp": {
+    "message": "Gemini 連續卡住沒有回覆，請查看頁面後手動送出訊息繼續"
+  },
+  "completed": {
+    "message": "完成（共 {n} 輪工具呼叫）"
+  },
+  "error": {
+    "message": "錯誤：{detail}"
+  },
+  "continueRounds": {
+    "message": "已連續執行 {n} 輪，要繼續嗎？"
+  },
+  "stopped": {
+    "message": "已停止"
+  },
+  "waiting": {
+    "message": "等待你確認：{tool}"
+  },
+  "confirmTool": {
+    "message": "第 {i}/{n} 個工具：{tool}"
+  },
+  "userStop": {
+    "message": "使用者停止"
+  },
+  "allowed": {
+    "message": "本對話允許 {tool}"
+  },
+  "denied": {
+    "message": "使用者拒絕執行這個工具。請改用別的方法，或詢問使用者。"
+  },
+  "skipped": {
+    "message": "略過 {tool}"
+  },
+  "running": {
+    "message": "執行中：{tool}"
+  },
+  "returned": {
+    "message": "已回傳結果（第 {n} 輪），等待 Gemini…"
+  },
+  "result": {
+    "message": "[GeminiForge 結果]"
+  },
+  "uploading": {
+    "message": "上傳截圖中…"
+  },
+  "lastShot": {
+    "message": "已附上執行 {tool} 後的最後一張截圖。"
+  },
+  "latestShot": {
+    "message": "已附上最新截圖。"
+  },
+  "failedShot": {
+    "message": "截圖上傳失敗：{detail}"
+  },
+  "next": {
+    "message": "請根據結果繼續下一步。任務完成就用文字總結，不要再輸出工具區塊。"
+  },
+  "noPrompt": {
+    "message": "讀不到工具說明"
+  },
+  "request": {
+    "message": "我的需求："
+  },
+  "injected": {
+    "message": "已自動帶入工具說明"
+  },
+  "injectFailed": {
+    "message": "自動帶入工具說明失敗：{detail}"
+  },
+  "busy": {
+    "message": "執行中，請先按停止"
+  },
+  "hasPrompt": {
+    "message": "輸入框裡已經有工具說明了"
+  },
+  "inserted": {
+    "message": "已插入工具說明，寫下需求後按傳送"
+  },
+  "testing": {
+    "message": "截圖測試中…"
+  },
+  "attached": {
+    "message": "截圖已放進輸入框（尚未送出）"
+  },
+  "connected": {
+    "message": "本機伺服器已連線（{cwd}）"
+  },
+  "offline": {
+    "message": "本機伺服器未啟動，請執行 start.bat。"
+  },
+  "dialogTitle": {
+    "message": "GeminiForge 確認"
+  },
+  "dialogAsk": {
+    "message": "Gemini 想要執行：{tool}"
+  },
+  "allow": {
+    "message": "允許"
+  },
+  "allowTimed": {
+    "message": "30 分鐘內都允許這個工具"
+  },
+  "deny": {
+    "message": "拒絕"
+  },
+  "countdown": {
+    "message": "{n} 秒後自動拒絕"
+  },
+  "authTitle": {
+    "message": "GeminiForge 授權"
+  },
+  "linkApp": {
+    "message": "連結 GeminiForge"
+  },
+  "accessRequest": {
+    "message": "「{client}」要求操作這台電腦，包括讀寫檔案、執行指令及控制滑鼠鍵盤。"
+  },
+  "pairCode": {
+    "message": "請輸入 GeminiForge 伺服器視窗顯示的配對碼。"
+  },
+  "allowLink": {
+    "message": "允許連結"
+  },
+  "redirectTo": {
+    "message": "授權後會轉回 {dest}"
+  },
+  "wrongCode": {
+    "message": "配對碼錯誤。"
+  },
+  "tooMany": {
+    "message": "錯誤次數太多，請 10 分鐘後再試。"
+  },
+  "unknownClient": {
+    "message": "未知的 client_id"
+  },
+  "badRedirect": {
+    "message": "不允許的 redirect_uri"
+  },
+  "onlyCode": {
+    "message": "只支援 response_type=code"
+  },
+  "needPkce": {
+    "message": "公開用戶端必須使用 PKCE"
+  },
+  "srvPortInUse": {
+    "message": "錯誤：埠 {port} 已被其他程式使用。可設定環境變數 GF_PORT 換一個埠（外掛的 manifest.json 與 background.js 也要一起改）。"
+  },
+  "pressEnterToExit": {
+    "message": "按 Enter 結束..."
+  },
+  "srvStarted": {
+    "message": "GeminiForge 本機伺服器已啟動：{url}"
+  },
+  "srvCwd": {
+    "message": "預設工作資料夾：{path}"
+  },
+  "srvStop": {
+    "message": "緊急停止：把滑鼠用力甩到螢幕任一角落。關閉這個視窗即停止伺服器。"
+  },
+  "mcpTitle": {
+    "message": "GeminiForge MCP 伺服器（給 Gemini 的 @ 自訂應用程式用）"
+  },
+  "mcpUrl": {
+    "message": "MCP 網址：{url}"
+  },
+  "mcpNoTailscale": {
+    "message": "（未偵測到 Tailscale 網址）"
+  },
+  "mcpPairCode": {
+    "message": "配對碼：{code}"
+  },
+  "mcpApproval": {
+    "message": "確認模式：{mode}（可在 server/mcp_config.json 修改）"
+  },
+  "mcpWebConfirm": {
+    "message": "Gemini 網頁確認：{mode}"
+  },
+  "mcpNoPopup": {
+    "message": "無法顯示確認視窗（{why}），需要確認的動作都會被拒絕。請安裝 zenity，或把 server/mcp_config.json 的 \"approval\" 改成 \"none\"。"
+  },
+  "srvStopPlain": {
+    "message": "按 Ctrl+C 或關閉這個視窗即停止伺服器。"
+  },
+  "mcpStopPlain": {
+    "message": "按 Ctrl+C 或關閉這個視窗即停止。"
+  },
+  "mcpTunnelStarting": {
+    "message": "正在啟動 cloudflared 快速通道..."
+  },
+  "mcpTunnelQuick": {
+    "message": "快速通道：每次啟動伺服器網址都會變。每次啟動後，請把新的 URL 填進 Gemini 的自訂應用程式，再配對一次。"
+  },
+  "mcpTunnelMissing": {
+    "message": "找不到 cloudflared。請先安裝（Windows：winget install Cloudflare.cloudflared，macOS：brew install cloudflared，Linux：到 Cloudflare 下載頁取得套件），或把 server/mcp_config.json 的 \"tunnel\" 改回 \"tailscale\"。"
+  },
+  "mcpTunnelFailed": {
+    "message": "cloudflared 在 30 秒內沒有回報通道網址。請檢查網路連線後再試一次。"
+  },
+  "mcpStop": {
+    "message": "緊急停止滑鼠操作：把滑鼠用力甩到螢幕角落。關閉此視窗即停止。"
+  },
+  "mcpClientRegistered": {
+    "message": "OAuth 用戶端已註冊：{name}（{hosts}）"
+  },
+  "mcpWrongCode": {
+    "message": "有人輸入了錯誤的配對碼"
+  },
+  "mcpLinked": {
+    "message": "已授權「{name}」連結"
+  },
+  "mcpDenied": {
+    "message": "使用者拒絕 {tool}"
+  },
+  "mcpPortInUse": {
+    "message": "錯誤：埠 {port} 已被其他程式使用。可設定環境變數 GF_MCP_PORT 換一個埠。"
+  },
+  "bkTooLarge": {
+    "message": "（檔案超過 {mb} MB，沒有備份內容）"
+  },
+  "bkSaved": {
+    "message": "（已備份，編號 {id}，可用 restore_backup 復原）"
+  },
+  "bkNone": {
+    "message": "沒有備份紀錄。"
+  },
+  "bkWasMissing": {
+    "message": "原本不存在（復原＝刪除該檔）"
+  },
+  "bkNotCopied": {
+    "message": "太大未備份"
+  },
+  "bkHeader": {
+    "message": "最新的在最上面："
+  },
+  "bkBadId": {
+    "message": "備份編號格式不對：{id}（例如 20261103-011819-001）"
+  },
+  "bkNotFound": {
+    "message": "找不到備份 {id}，先用 list_backups 查編號。"
+  },
+  "bkNoContent": {
+    "message": "備份 {id} 沒有內容（原檔太大），無法復原。"
+  },
+  "bkRestored": {
+    "message": "已把 {path} 復原到 {time} 之前的內容"
+  },
+  "bkDeleted": {
+    "message": "{path} 原本不存在，已刪除（內容已備份）"
+  },
+  "bkNothing": {
+    "message": "{path} 原本不存在，現在也不存在，不需要復原"
+  },
+  "bkUndo": {
+    "message": "{msg}。若要撤銷這次復原：restore_backup {id}"
+  },
+  "usage": {
+    "message": "用量"
+  },
+  "usageNone": {
+    "message": "尚未讀取，按 ↻"
+  },
+  "usageLoading": {
+    "message": "正在讀取 gemini.google.com/usage…"
+  },
+  "usageFailed": {
+    "message": "無法讀取用量頁面"
+  },
+  "usageUpdated": {
+    "message": "更新於 {time}"
+  },
+  "usageRefresh": {
+    "message": "更新用量（會在背景分頁開啟 gemini.google.com/usage 幾秒鐘）"
+  },
+  "usageLimit": {
+    "message": "已達 Gemini 用量上限，重設前可能無法回覆。"
+  },
+  "handoff": {
+    "message": "換帳號接續"
+  },
+  "handoffHint": {
+    "message": "在這個瀏覽器已登入的另一個 Google 帳號開新對話，帶入原始需求和目前進度接著做。百分比是該帳號最近一次在這裡讀到的用量。讀不到帳號清單時以編號顯示：帳號 1 是預設帳號，其餘依登入順序。"
+  },
+  "handoffAccount": {
+    "message": "帳號 {n}"
+  },
+  "handoffCollecting": {
+    "message": "正在載入對話紀錄…（{n} 則，按停止可取消）"
+  },
+  "handoffNoTask": {
+    "message": "（原始需求沒有載入。請從下面的紀錄判斷任務目標；無法確定時，先詢問使用者再動手。）"
+  },
+  "handoffOpened": {
+    "message": "已在 {name} 開啟新對話接續任務"
+  },
+  "handoffResuming": {
+    "message": "正在接續另一個帳號的任務…"
+  },
+  "handoffResumed": {
+    "message": "已送出交接內容，等待 Gemini…"
+  },
+  "handoffWrongAccount": {
+    "message": "{name} 沒有登入這個瀏覽器，已取消交接"
+  },
+  "handoffIntro": {
+    "message": "[GeminiForge 交接] 這個任務原本在另一個對話中進行，因為達到用量上限而中斷，現在由你接手。下面是原始需求（TASK）和到目前為止的過程紀錄（LOG；較早的內容已截短或省略，先前的截圖沒有附上）。已經寫入的檔案和執行過的指令，結果都還留在這台電腦上。"
+  },
+  "handoffSkipped": {
+    "message": "（已省略較早的 {n} 則訊息）"
+  },
+  "handoffNext": {
+    "message": "請先用工具確認目前的實際狀態（需要時重新讀檔或截圖），再從中斷的地方繼續，不要重做已經完成的步驟。"
+  },
+  "handoffNoAccount": {
+    "message": "這個瀏覽器沒有登入其他 Google 帳號"
+  },
+  "handoffPartial": {
+    "message": "對話開頭沒有載入，交接內容不含原始需求"
+  },
+  "handoffEmpty": {
+    "message": "這個對話還沒有內容可以交接"
+  }
+}

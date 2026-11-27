@@ -1,0 +1,44 @@
+[package]
+name = "geminiforge-server"
+version = "1.3.0"
+edition = "2021"
+description = "GeminiForge local tool server"
+publish = false
+
+[lib]
+name = "geminiforge"
+path = "src/lib.rs"
+
+[[bin]]
+name = "geminiforge-server"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = { version = "1", features = ["preserve_order"] }
+fancy-regex = "0.20"
+jpeg-encoder = "0.7"
+
+# macOS and Linux screenshots come from the system's capture program as PNG
+[target.'cfg(not(windows))'.dependencies]
+png = "0.17"
+
+# UI Automation and OCR are Windows-only so far
+[target.'cfg(windows)'.dependencies.windows]
+version = "0.61"
+features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_Variant",
+    "Win32_UI_Accessibility",
+    "Foundation",
+    "Foundation_Collections",
+    "Globalization",
+    "Graphics_Imaging",
+    "Media_Ocr",
+    "Storage_Streams",
+]
+
+[profile.release]
+opt-level = 3
+strip = true

@@ -1,0 +1,11 @@
+# Build output
+server/target/
+
+# Local secrets and runtime data (pairing code, OAuth secrets, tokens, logs)
+server/mcp_config.json
+server/mcp_auth.json
+server/mcp_access.log
+*.log
+backups/
+.env
+.env.*

@@ -1,0 +1,452 @@
+{
+  "description": {
+    "message": "Use the local GeminiForge server to work with files, run commands, and control your computer from Gemini."
+  },
+  "language": {
+    "message": "Language"
+  },
+  "mode": {
+    "message": "Execution mode"
+  },
+  "enabled": {
+    "message": "Enable"
+  },
+  "manual": {
+    "message": "Ask at every step"
+  },
+  "readonly": {
+    "message": "Ask except for read-only tools"
+  },
+  "auto": {
+    "message": "Run all automatically"
+  },
+  "modeNote": {
+    "message": "This setting controls the extension’s JSON tools. Gemini handles MCP approvals separately."
+  },
+  "autoPrompt": {
+    "message": "Add tool instructions to new chats"
+  },
+  "autoHint": {
+    "message": "Prepend tool instructions to the first message in a new chat"
+  },
+  "notify": {
+    "message": "Notify me when Gemini is done"
+  },
+  "notifyHint": {
+    "message": "Show a desktop notification when Gemini finishes replying, needs your confirmation, or hits an error. \"Only when away\" notifies only while you are on another tab or app; \"Always\" also notifies while you are on this tab"
+  },
+  "notifyOff": {
+    "message": "Off"
+  },
+  "notifyAway": {
+    "message": "Only when away"
+  },
+  "notifyAlways": {
+    "message": "Always"
+  },
+  "notifyReply": {
+    "message": "Gemini finished replying"
+  },
+  "notifyTest": {
+    "message": "Test notification"
+  },
+  "notifyTestBody": {
+    "message": "This is a GeminiForge test notification."
+  },
+  "notifyTestSent": {
+    "message": "Test notification sent. If you don't see it, check Windows notification settings and Do not disturb."
+  },
+  "notifyFailed": {
+    "message": "Notification failed: {detail}"
+  },
+  "prompt": {
+    "message": "Insert tool instructions"
+  },
+  "stop": {
+    "message": "Stop"
+  },
+  "shot": {
+    "message": "Test screenshot"
+  },
+  "reload": {
+    "message": "Reload extension and refresh page"
+  },
+  "run": {
+    "message": "Run"
+  },
+  "always": {
+    "message": "Allow for this chat"
+  },
+  "alwaysHint": {
+    "message": "Allow this tool for the rest of this chat"
+  },
+  "skip": {
+    "message": "Skip"
+  },
+  "halt": {
+    "message": "Stop all"
+  },
+  "idle": {
+    "message": "Ready"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "noResponse": {
+    "message": "No response"
+  },
+  "updated": {
+    "message": "The extension was updated. Refresh this page."
+  },
+  "noEditor": {
+    "message": "Gemini’s message field was not found."
+  },
+  "noUpload": {
+    "message": "Upload button not found."
+  },
+  "noImageInput": {
+    "message": "Image upload field not found."
+  },
+  "consent": {
+    "message": "Accept the upload consent dialog in Gemini."
+  },
+  "missingImage": {
+    "message": "The image did not appear in the message field."
+  },
+  "cancelSend": {
+    "message": "Send canceled because the input mode or chat changed."
+  },
+  "sendTimeout": {
+    "message": "Send is unavailable. The image may still be uploading."
+  },
+  "generating": {
+    "message": "Gemini is responding…"
+  },
+  "stalled": {
+    "message": "No response from Gemini for {s} seconds. Stopped it and asked again."
+  },
+  "stallNudge": {
+    "message": "[GeminiForge] Your last reply stalled and produced nothing. Continue from the latest results above."
+  },
+  "stallGiveUp": {
+    "message": "Gemini keeps stalling without a reply. Check the page, then send a message to continue."
+  },
+  "completed": {
+    "message": "Finished after {n} tool rounds."
+  },
+  "error": {
+    "message": "Error: {detail}"
+  },
+  "continueRounds": {
+    "message": "Completed {n} consecutive rounds. Continue?"
+  },
+  "stopped": {
+    "message": "Stopped"
+  },
+  "waiting": {
+    "message": "Awaiting approval for {tool}"
+  },
+  "confirmTool": {
+    "message": "Tool {i} of {n}: {tool}"
+  },
+  "userStop": {
+    "message": "Stopped by user"
+  },
+  "allowed": {
+    "message": "Allowed {tool} for this chat"
+  },
+  "denied": {
+    "message": "The user declined this tool. Try another approach or ask the user."
+  },
+  "skipped": {
+    "message": "Skipped {tool}"
+  },
+  "running": {
+    "message": "Running {tool}"
+  },
+  "returned": {
+    "message": "Round {n} results sent. Waiting for Gemini…"
+  },
+  "result": {
+    "message": "[GeminiForge results]"
+  },
+  "uploading": {
+    "message": "Uploading screenshot…"
+  },
+  "lastShot": {
+    "message": "Attached the last screenshot taken after {tool}."
+  },
+  "latestShot": {
+    "message": "Attached the latest screenshot."
+  },
+  "failedShot": {
+    "message": "Screenshot upload failed: {detail}"
+  },
+  "next": {
+    "message": "Continue based on these results. When finished, summarize in plain text without further tool blocks."
+  },
+  "noPrompt": {
+    "message": "Could not load tool instructions."
+  },
+  "request": {
+    "message": "My request: "
+  },
+  "injected": {
+    "message": "Tool instructions added automatically"
+  },
+  "injectFailed": {
+    "message": "Could not add tool instructions: {detail}"
+  },
+  "busy": {
+    "message": "A tool is running. Stop it first."
+  },
+  "hasPrompt": {
+    "message": "Tool instructions are already in the message field."
+  },
+  "inserted": {
+    "message": "Instructions inserted. Enter your request and send it."
+  },
+  "testing": {
+    "message": "Testing screenshot…"
+  },
+  "attached": {
+    "message": "Screenshot added to the draft."
+  },
+  "connected": {
+    "message": "Local server connected ({cwd})"
+  },
+  "offline": {
+    "message": "Local server unavailable. Run start.bat."
+  },
+  "dialogTitle": {
+    "message": "GeminiForge approval"
+  },
+  "dialogAsk": {
+    "message": "Gemini wants to run {tool}"
+  },
+  "allow": {
+    "message": "Allow"
+  },
+  "allowTimed": {
+    "message": "Allow this tool for 30 minutes"
+  },
+  "deny": {
+    "message": "Deny"
+  },
+  "countdown": {
+    "message": "Automatically deny in {n} s"
+  },
+  "authTitle": {
+    "message": "GeminiForge authorization"
+  },
+  "linkApp": {
+    "message": "Connect to GeminiForge"
+  },
+  "accessRequest": {
+    "message": "{client} is requesting access to this computer to read and write files, run commands, and control the mouse and keyboard."
+  },
+  "pairCode": {
+    "message": "Enter the pairing code shown in the GeminiForge server window."
+  },
+  "allowLink": {
+    "message": "Allow connection"
+  },
+  "redirectTo": {
+    "message": "After approval, you’ll return to {dest}."
+  },
+  "wrongCode": {
+    "message": "Incorrect pairing code."
+  },
+  "tooMany": {
+    "message": "Too many attempts. Try again in 10 minutes."
+  },
+  "unknownClient": {
+    "message": "Unknown client_id"
+  },
+  "badRedirect": {
+    "message": "This redirect_uri is not allowed."
+  },
+  "onlyCode": {
+    "message": "Only response_type=code is supported."
+  },
+  "needPkce": {
+    "message": "Public clients must use PKCE."
+  },
+  "srvPortInUse": {
+    "message": "Error: port {port} is already in use by another program. Set the GF_PORT environment variable to use another port (also change it in the extension's manifest.json and background.js)."
+  },
+  "pressEnterToExit": {
+    "message": "Press Enter to exit..."
+  },
+  "srvStarted": {
+    "message": "GeminiForge local server is running: {url}"
+  },
+  "srvCwd": {
+    "message": "Default working folder: {path}"
+  },
+  "srvStop": {
+    "message": "Emergency stop: fling the mouse into any screen corner. Close this window to stop the server."
+  },
+  "mcpTitle": {
+    "message": "GeminiForge MCP server (for Gemini's @ custom app)"
+  },
+  "mcpUrl": {
+    "message": "MCP URL: {url}"
+  },
+  "mcpNoTailscale": {
+    "message": "(no Tailscale URL detected)"
+  },
+  "mcpPairCode": {
+    "message": "Pairing code: {code}"
+  },
+  "mcpApproval": {
+    "message": "Approval mode: {mode} (change it in server/mcp_config.json)"
+  },
+  "mcpWebConfirm": {
+    "message": "Gemini web confirmation: {mode}"
+  },
+  "mcpNoPopup": {
+    "message": "No approval popup can be shown ({why}), so actions that need approval are denied. Install zenity, or set \"approval\" to \"none\" in server/mcp_config.json."
+  },
+  "srvStopPlain": {
+    "message": "Press Ctrl+C or close this window to stop the server."
+  },
+  "mcpStopPlain": {
+    "message": "Press Ctrl+C or close this window to stop."
+  },
+  "mcpTunnelStarting": {
+    "message": "Starting the cloudflared quick tunnel..."
+  },
+  "mcpTunnelQuick": {
+    "message": "Quick tunnel: this address changes every time the server starts. After each start, put the new URL into the custom app in Gemini and pair again."
+  },
+  "mcpTunnelMissing": {
+    "message": "cloudflared was not found. Install it (Windows: winget install Cloudflare.cloudflared, macOS: brew install cloudflared, Linux: the package from Cloudflare's downloads page), or set \"tunnel\" back to \"tailscale\" in server/mcp_config.json."
+  },
+  "mcpTunnelFailed": {
+    "message": "cloudflared did not report a tunnel address within 30 seconds. Check the internet connection and try again."
+  },
+  "mcpStop": {
+    "message": "Emergency stop for mouse actions: fling the mouse into a screen corner. Close this window to stop."
+  },
+  "mcpClientRegistered": {
+    "message": "OAuth client registered: {name} ({hosts})"
+  },
+  "mcpWrongCode": {
+    "message": "Someone entered a wrong pairing code"
+  },
+  "mcpLinked": {
+    "message": "Authorized \"{name}\" to connect"
+  },
+  "mcpDenied": {
+    "message": "User denied {tool}"
+  },
+  "mcpPortInUse": {
+    "message": "Error: port {port} is already in use by another program. Set the GF_MCP_PORT environment variable to use another port."
+  },
+  "bkTooLarge": {
+    "message": " (file is over {mb} MB; content not backed up)"
+  },
+  "bkSaved": {
+    "message": " (backed up as {id}; restore with restore_backup)"
+  },
+  "bkNone": {
+    "message": "No backups."
+  },
+  "bkWasMissing": {
+    "message": "did not exist (restore = delete the file)"
+  },
+  "bkNotCopied": {
+    "message": "too large, not backed up"
+  },
+  "bkHeader": {
+    "message": "Newest first:"
+  },
+  "bkBadId": {
+    "message": "Invalid backup id: {id} (example: 20261103-011819-001)"
+  },
+  "bkNotFound": {
+    "message": "Backup {id} not found; look up ids with list_backups."
+  },
+  "bkNoContent": {
+    "message": "Backup {id} has no content (the file was too large) and cannot be restored."
+  },
+  "bkRestored": {
+    "message": "Restored {path} to its content from before {time}"
+  },
+  "bkDeleted": {
+    "message": "{path} did not exist before, so it was deleted (its content is backed up)"
+  },
+  "bkNothing": {
+    "message": "{path} did not exist then and does not exist now; nothing to restore"
+  },
+  "bkUndo": {
+    "message": "{msg}. To undo this restore: restore_backup {id}"
+  },
+  "usage": {
+    "message": "Usage"
+  },
+  "usageNone": {
+    "message": "Not read yet — press ↻"
+  },
+  "usageLoading": {
+    "message": "Reading gemini.google.com/usage…"
+  },
+  "usageFailed": {
+    "message": "Could not read the usage page"
+  },
+  "usageUpdated": {
+    "message": "Updated {time}"
+  },
+  "usageRefresh": {
+    "message": "Refresh usage (opens gemini.google.com/usage in a background tab for a few seconds)"
+  },
+  "usageLimit": {
+    "message": "Gemini usage limit reached; replies may stop until it resets."
+  },
+  "handoff": {
+    "message": "Continue on another account"
+  },
+  "handoffHint": {
+    "message": "Opens a new chat in another Google account signed in to this browser and carries over the original request and the progress so far. The percentage is that account's usage as last read here. If the accounts cannot be listed they are shown by number: Account 1 is the default account, the rest follow in sign-in order."
+  },
+  "handoffAccount": {
+    "message": "Account {n}"
+  },
+  "handoffCollecting": {
+    "message": "Loading the conversation… ({n} messages; Stop cancels)"
+  },
+  "handoffNoTask": {
+    "message": "(The original request could not be loaded. Work out the goal from the log below; if it is not clear, ask the user before doing anything.)"
+  },
+  "handoffOpened": {
+    "message": "Opened a new chat on {name} to continue the task"
+  },
+  "handoffResuming": {
+    "message": "Picking up a task from another account…"
+  },
+  "handoffResumed": {
+    "message": "Handoff sent; waiting for Gemini…"
+  },
+  "handoffWrongAccount": {
+    "message": "{name} is not signed in to this browser; handoff cancelled"
+  },
+  "handoffIntro": {
+    "message": "[GeminiForge handoff] This task was being worked on in another chat that stopped at its usage limit, and you are taking it over. Below are the original request (TASK) and a log of the work so far (LOG; older entries are shortened or left out, and earlier screenshots are not attached). Files already written and commands already run have left their results on this computer."
+  },
+  "handoffSkipped": {
+    "message": "({n} earlier messages left out)"
+  },
+  "handoffNext": {
+    "message": "First use the tools to check the actual current state (read files or take a screenshot again where needed), then continue from where the work stopped. Do not redo steps that are already done."
+  },
+  "handoffNoAccount": {
+    "message": "No other Google account is signed in to this browser"
+  },
+  "handoffPartial": {
+    "message": "The start of the chat did not load; the handoff goes without the original request"
+  },
+  "handoffEmpty": {
+    "message": "This chat has nothing to hand off yet"
+  }
+}

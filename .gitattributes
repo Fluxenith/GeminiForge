@@ -1,0 +1,3 @@
+# Shell scripts run on macOS and Linux: keep LF line ends in every checkout,
+# including Windows ones that a release zip may be made from.
+*.sh text eol=lf

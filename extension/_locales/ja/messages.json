@@ -1,0 +1,452 @@
+{
+  "description": {
+    "message": "Gemini からローカルの GeminiForge サーバーを通じてファイルの読み書き、コマンド実行、PC 操作ができます。"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "mode": {
+    "message": "実行モード"
+  },
+  "enabled": {
+    "message": "有効にする"
+  },
+  "manual": {
+    "message": "毎回確認する"
+  },
+  "readonly": {
+    "message": "読み取り専用ツール以外は確認"
+  },
+  "auto": {
+    "message": "すべて自動実行"
+  },
+  "modeNote": {
+    "message": "この設定は拡張機能の JSON ツールに適用されます。MCP の実行許可は Gemini が確認します。"
+  },
+  "autoPrompt": {
+    "message": "新しいチャットにツールの説明を追加"
+  },
+  "autoHint": {
+    "message": "新しいチャットの最初のメッセージの先頭にツールの説明を追加します"
+  },
+  "notify": {
+    "message": "回答が終わったら通知"
+  },
+  "notifyHint": {
+    "message": "Gemini の回答完了・確認待ち・エラーのときにデスクトップ通知を表示します。「タブを離れているときだけ」は別のタブやアプリを見ているときだけ、「常に通知」はこのタブを見ていても通知します"
+  },
+  "notifyOff": {
+    "message": "オフ"
+  },
+  "notifyAway": {
+    "message": "タブを離れているときだけ"
+  },
+  "notifyAlways": {
+    "message": "常に通知"
+  },
+  "notifyReply": {
+    "message": "Gemini の回答が完了しました"
+  },
+  "notifyTest": {
+    "message": "通知をテスト"
+  },
+  "notifyTestBody": {
+    "message": "GeminiForge のテスト通知です。"
+  },
+  "notifyTestSent": {
+    "message": "テスト通知を送信しました。表示されない場合は Windows の通知設定と「応答不可」を確認してください。"
+  },
+  "notifyFailed": {
+    "message": "通知に失敗しました：{detail}"
+  },
+  "prompt": {
+    "message": "ツールの説明を挿入"
+  },
+  "stop": {
+    "message": "停止"
+  },
+  "shot": {
+    "message": "スクリーンショットをテスト"
+  },
+  "reload": {
+    "message": "拡張機能とページを再読み込み"
+  },
+  "run": {
+    "message": "実行"
+  },
+  "always": {
+    "message": "このチャットで許可"
+  },
+  "alwaysHint": {
+    "message": "このチャットでは同じツールの実行を再確認しません"
+  },
+  "skip": {
+    "message": "スキップ"
+  },
+  "halt": {
+    "message": "すべて停止"
+  },
+  "idle": {
+    "message": "待機中"
+  },
+  "disabled": {
+    "message": "無効"
+  },
+  "noResponse": {
+    "message": "応答がありません"
+  },
+  "updated": {
+    "message": "拡張機能が更新されました。ページを再読み込みしてください。"
+  },
+  "noEditor": {
+    "message": "Gemini の入力欄が見つかりません。"
+  },
+  "noUpload": {
+    "message": "アップロードボタンが見つかりません。"
+  },
+  "noImageInput": {
+    "message": "画像のアップロード欄が見つかりません。"
+  },
+  "consent": {
+    "message": "Gemini のアップロード確認画面で同意してください。"
+  },
+  "missingImage": {
+    "message": "入力欄に画像が表示されませんでした。"
+  },
+  "cancelSend": {
+    "message": "入力モードまたはチャットが変わったため、送信を取り消しました。"
+  },
+  "sendTimeout": {
+    "message": "送信できません。画像をアップロード中の可能性があります。"
+  },
+  "generating": {
+    "message": "Gemini が回答中…"
+  },
+  "stalled": {
+    "message": "Gemini が {s} 秒間応答しないため、停止して再度依頼しました"
+  },
+  "stallNudge": {
+    "message": "[GeminiForge] 直前の回答が止まり、何も出力されませんでした。上の最新の結果に基づいて続けてください。"
+  },
+  "stallGiveUp": {
+    "message": "Gemini の応答が繰り返し止まります。ページを確認し、メッセージを送って続けてください。"
+  },
+  "completed": {
+    "message": "完了（ツール呼び出し {n} 回）"
+  },
+  "error": {
+    "message": "エラー：{detail}"
+  },
+  "continueRounds": {
+    "message": "連続で {n} 回実行しました。続けますか？"
+  },
+  "stopped": {
+    "message": "停止しました"
+  },
+  "waiting": {
+    "message": "{tool} の確認待ち"
+  },
+  "confirmTool": {
+    "message": "ツール {i}/{n}：{tool}"
+  },
+  "userStop": {
+    "message": "ユーザーが停止しました"
+  },
+  "allowed": {
+    "message": "このチャットでは {tool} を許可しました"
+  },
+  "denied": {
+    "message": "ユーザーが実行を拒否しました。別の方法を試すか、ユーザーに確認してください。"
+  },
+  "skipped": {
+    "message": "{tool} をスキップしました"
+  },
+  "running": {
+    "message": "{tool} を実行中"
+  },
+  "returned": {
+    "message": "{n} 回目の結果を送信しました。Gemini の回答待ち…"
+  },
+  "result": {
+    "message": "[GeminiForge 結果]"
+  },
+  "uploading": {
+    "message": "スクリーンショットをアップロード中…"
+  },
+  "lastShot": {
+    "message": "{tool} 実行後の最後のスクリーンショットを添付しました。"
+  },
+  "latestShot": {
+    "message": "最新のスクリーンショットを添付しました。"
+  },
+  "failedShot": {
+    "message": "スクリーンショットのアップロードに失敗しました：{detail}"
+  },
+  "next": {
+    "message": "結果に基づいて続けてください。完了したらツールブロックを出力せず、文章で要約してください。"
+  },
+  "noPrompt": {
+    "message": "ツールの説明を読み込めません。"
+  },
+  "request": {
+    "message": "依頼内容："
+  },
+  "injected": {
+    "message": "ツールの説明を自動で追加しました"
+  },
+  "injectFailed": {
+    "message": "ツールの説明を追加できません：{detail}"
+  },
+  "busy": {
+    "message": "実行中です。先に停止してください。"
+  },
+  "hasPrompt": {
+    "message": "入力欄にはすでにツールの説明があります。"
+  },
+  "inserted": {
+    "message": "説明を挿入しました。依頼内容を入力して送信してください。"
+  },
+  "testing": {
+    "message": "スクリーンショットをテスト中…"
+  },
+  "attached": {
+    "message": "スクリーンショットを下書きに追加しました。"
+  },
+  "connected": {
+    "message": "ローカルサーバーに接続済み（{cwd}）"
+  },
+  "offline": {
+    "message": "ローカルサーバーに接続できません。start.bat を実行してください。"
+  },
+  "dialogTitle": {
+    "message": "GeminiForge 実行確認"
+  },
+  "dialogAsk": {
+    "message": "Gemini が {tool} を実行しようとしています"
+  },
+  "allow": {
+    "message": "許可"
+  },
+  "allowTimed": {
+    "message": "このツールを30分間許可"
+  },
+  "deny": {
+    "message": "拒否"
+  },
+  "countdown": {
+    "message": "{n} 秒後に自動で拒否"
+  },
+  "authTitle": {
+    "message": "GeminiForge の認証"
+  },
+  "linkApp": {
+    "message": "GeminiForge に接続"
+  },
+  "accessRequest": {
+    "message": "{client} がこの PC へのアクセスを求めています。ファイルの読み書き、コマンドの実行、マウスやキーボードの操作が可能になります。"
+  },
+  "pairCode": {
+    "message": "GeminiForge サーバーのウィンドウに表示されたペアリングコードを入力してください。"
+  },
+  "allowLink": {
+    "message": "接続を許可"
+  },
+  "redirectTo": {
+    "message": "許可後は {dest} に戻ります。"
+  },
+  "wrongCode": {
+    "message": "ペアリングコードが正しくありません。"
+  },
+  "tooMany": {
+    "message": "試行回数が多すぎます。10 分後にもう一度お試しください。"
+  },
+  "unknownClient": {
+    "message": "不明な client_id です"
+  },
+  "badRedirect": {
+    "message": "この redirect_uri は許可されていません"
+  },
+  "onlyCode": {
+    "message": "response_type=code のみ対応しています"
+  },
+  "needPkce": {
+    "message": "パブリッククライアントには PKCE が必要です"
+  },
+  "srvPortInUse": {
+    "message": "エラー：ポート {port} は別のプログラムが使用中です。環境変数 GF_PORT で別のポートを指定してください（拡張機能の manifest.json と background.js も合わせて変更してください）。"
+  },
+  "pressEnterToExit": {
+    "message": "Enter キーで終了..."
+  },
+  "srvStarted": {
+    "message": "GeminiForge ローカルサーバーを起動しました：{url}"
+  },
+  "srvCwd": {
+    "message": "既定の作業フォルダー：{path}"
+  },
+  "srvStop": {
+    "message": "緊急停止：マウスを画面のいずれかの隅へ勢いよく動かします。このウィンドウを閉じるとサーバーが停止します。"
+  },
+  "mcpTitle": {
+    "message": "GeminiForge MCP サーバー（Gemini の @ カスタムアプリ用）"
+  },
+  "mcpUrl": {
+    "message": "MCP URL：{url}"
+  },
+  "mcpNoTailscale": {
+    "message": "（Tailscale の URL が見つかりません）"
+  },
+  "mcpPairCode": {
+    "message": "ペアリングコード：{code}"
+  },
+  "mcpApproval": {
+    "message": "確認モード：{mode}（server/mcp_config.json で変更できます）"
+  },
+  "mcpWebConfirm": {
+    "message": "Gemini ウェブでの確認：{mode}"
+  },
+  "mcpNoPopup": {
+    "message": "確認ウィンドウを表示できません（{why}）。確認が必要な操作はすべて拒否されます。zenity をインストールするか、server/mcp_config.json の \"approval\" を \"none\" にしてください。"
+  },
+  "srvStopPlain": {
+    "message": "Ctrl+C を押すか、このウィンドウを閉じるとサーバーが停止します。"
+  },
+  "mcpStopPlain": {
+    "message": "Ctrl+C を押すか、このウィンドウを閉じると停止します。"
+  },
+  "mcpTunnelStarting": {
+    "message": "cloudflared のクイックトンネルを起動しています..."
+  },
+  "mcpTunnelQuick": {
+    "message": "クイックトンネル：サーバーを起動するたびにアドレスが変わります。起動のたびに新しい URL を Gemini のカスタムアプリに入力し、もう一度ペアリングしてください。"
+  },
+  "mcpTunnelMissing": {
+    "message": "cloudflared が見つかりません。インストールするか（Windows：winget install Cloudflare.cloudflared、macOS：brew install cloudflared、Linux：Cloudflare のダウンロードページのパッケージ）、server/mcp_config.json の \"tunnel\" を \"tailscale\" に戻してください。"
+  },
+  "mcpTunnelFailed": {
+    "message": "cloudflared が 30 秒以内にトンネルのアドレスを返しませんでした。インターネット接続を確認してもう一度お試しください。"
+  },
+  "mcpStop": {
+    "message": "マウス操作の緊急停止：マウスを画面の隅へ勢いよく動かします。このウィンドウを閉じると停止します。"
+  },
+  "mcpClientRegistered": {
+    "message": "OAuth クライアントを登録しました：{name}（{hosts}）"
+  },
+  "mcpWrongCode": {
+    "message": "誤ったペアリングコードが入力されました"
+  },
+  "mcpLinked": {
+    "message": "「{name}」の接続を許可しました"
+  },
+  "mcpDenied": {
+    "message": "ユーザーが {tool} を拒否しました"
+  },
+  "mcpPortInUse": {
+    "message": "エラー：ポート {port} は別のプログラムが使用中です。環境変数 GF_MCP_PORT を設定して別のポートを使ってください。"
+  },
+  "bkTooLarge": {
+    "message": "（ファイルが {mb} MB を超えるため内容はバックアップされていません）"
+  },
+  "bkSaved": {
+    "message": "（バックアップ済み、ID {id}。restore_backup で復元できます）"
+  },
+  "bkNone": {
+    "message": "バックアップはありません。"
+  },
+  "bkWasMissing": {
+    "message": "元は存在しなかった（復元＝ファイルを削除）"
+  },
+  "bkNotCopied": {
+    "message": "大きすぎるためバックアップなし"
+  },
+  "bkHeader": {
+    "message": "新しい順："
+  },
+  "bkBadId": {
+    "message": "バックアップ ID の形式が正しくありません：{id}（例：20261103-011819-001）"
+  },
+  "bkNotFound": {
+    "message": "バックアップ {id} が見つかりません。list_backups で ID を確認してください。"
+  },
+  "bkNoContent": {
+    "message": "バックアップ {id} には内容がありません（元のファイルが大きすぎました）。復元できません。"
+  },
+  "bkRestored": {
+    "message": "{path} を {time} より前の内容に復元しました"
+  },
+  "bkDeleted": {
+    "message": "{path} は元々存在しなかったため削除しました（内容はバックアップ済み）"
+  },
+  "bkNothing": {
+    "message": "{path} は当時も現在も存在しないため、復元は不要です"
+  },
+  "bkUndo": {
+    "message": "{msg}。この復元を取り消すには：restore_backup {id}"
+  },
+  "usage": {
+    "message": "使用量"
+  },
+  "usageNone": {
+    "message": "未取得 — ↻ を押してください"
+  },
+  "usageLoading": {
+    "message": "gemini.google.com/usage を読み込み中…"
+  },
+  "usageFailed": {
+    "message": "使用量ページを読み取れませんでした"
+  },
+  "usageUpdated": {
+    "message": "{time} に更新"
+  },
+  "usageRefresh": {
+    "message": "使用量を更新（バックグラウンドのタブで gemini.google.com/usage を数秒間開きます）"
+  },
+  "usageLimit": {
+    "message": "Gemini の使用上限に達しました。リセットまで応答が止まる場合があります。"
+  },
+  "handoff": {
+    "message": "別のアカウントで続行"
+  },
+  "handoffHint": {
+    "message": "このブラウザにログイン済みの別の Google アカウントで新しいチャットを開き、元の依頼とこれまでの進行状況を引き継いで続けます。パーセントは、そのアカウントについてここで最後に読み取った使用量です。アカウントの一覧を取得できないときは番号で表示します（アカウント 1 が既定のアカウント、以降はログイン順）。"
+  },
+  "handoffAccount": {
+    "message": "アカウント {n}"
+  },
+  "handoffCollecting": {
+    "message": "会話の記録を読み込んでいます…（{n} 件、停止でキャンセル）"
+  },
+  "handoffNoTask": {
+    "message": "（元の依頼を読み込めませんでした。以下の記録からタスクの目的を判断し、はっきりしない場合は作業の前にユーザーに確認してください。）"
+  },
+  "handoffOpened": {
+    "message": "{name} で新しいチャットを開き、タスクを引き継ぎました"
+  },
+  "handoffResuming": {
+    "message": "別のアカウントのタスクを引き継いでいます…"
+  },
+  "handoffResumed": {
+    "message": "引き継ぎ内容を送信しました。Gemini の応答を待っています…"
+  },
+  "handoffWrongAccount": {
+    "message": "{name} はこのブラウザにログインしていないため、引き継ぎを中止しました"
+  },
+  "handoffIntro": {
+    "message": "[GeminiForge 引き継ぎ] このタスクは別のチャットで進めていましたが、使用上限に達して中断したため、あなたが引き継ぎます。以下は元の依頼（TASK）とこれまでの作業記録（LOG。古い内容は短縮または省略され、以前のスクリーンショットは添付されていません）です。すでに書き込んだファイルや実行したコマンドの結果は、このコンピューターに残っています。"
+  },
+  "handoffSkipped": {
+    "message": "（古いメッセージ {n} 件を省略）"
+  },
+  "handoffNext": {
+    "message": "まずツールで現在の実際の状態を確認し（必要ならファイルを読み直すかスクリーンショットを撮り直す）、中断したところから続けてください。完了済みの手順はやり直さないでください。"
+  },
+  "handoffNoAccount": {
+    "message": "このブラウザには他の Google アカウントがログインしていません"
+  },
+  "handoffPartial": {
+    "message": "チャットの先頭を読み込めなかったため、元の依頼なしで引き継ぎます"
+  },
+  "handoffEmpty": {
+    "message": "このチャットには引き継ぐ内容がまだありません"
+  }
+}

@@ -1,0 +1,978 @@
+[
+ {
+  "name": "cd",
+  "description": "Change the current working folder (later relative paths resolve against it).",
+  "inputSchema": {
+   "properties": {
+    "path": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "path"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "list_dir",
+  "description": "List a folder; use it to locate projects. directories_only=true lists subfolders only; depth defaults to 1, max 4. Drive roots work as C:/ or D:/.",
+  "inputSchema": {
+   "properties": {
+    "path": {
+     "default": ".",
+     "type": "string"
+    },
+    "depth": {
+     "default": 1,
+     "type": "integer"
+    },
+    "directories_only": {
+     "default": false,
+     "type": "boolean"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "read_file",
+  "description": "Read a text file with line numbers. Read large files in parts with offset/limit.",
+  "inputSchema": {
+   "properties": {
+    "path": {
+     "type": "string"
+    },
+    "offset": {
+     "default": 1,
+     "type": "integer"
+    },
+    "limit": {
+     "default": 400,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "path"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "read_files",
+  "description": "Read up to 20 text files in one call, each with line numbers like read_file (limit lines per file). Use it instead of several read_file calls. A file that cannot be read shows its error in its place.",
+  "inputSchema": {
+   "properties": {
+    "paths": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "limit": {
+     "default": 200,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "paths"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "write_file",
+  "description": "Create or overwrite a whole file (UTF-8). Use edit_file for small changes. The original is backed up first.",
+  "inputSchema": {
+   "properties": {
+    "path": {
+     "type": "string"
+    },
+    "content": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "path",
+    "content"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "edit_file",
+  "description": "Replace text in a file that exactly matches old (including spaces and indentation) with new. Check the content with read_file first. The original is backed up first.",
+  "inputSchema": {
+   "properties": {
+    "path": {
+     "type": "string"
+    },
+    "old": {
+     "type": "string"
+    },
+    "new": {
+     "type": "string"
+    },
+    "replace_all": {
+     "default": false,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "path",
+    "old",
+    "new"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "edit_files",
+  "description": "Make several edit_file replacements in one call, in one file or several: edits is a list of {path, old, new, replace_all?}. Edits to the same file apply in order. All edits are checked first; if any old text is not found (or not unique without replace_all), no file is changed. Each changed file is backed up once.",
+  "inputSchema": {
+   "properties": {
+    "edits": {
+     "items": {
+      "properties": {
+       "path": {
+        "type": "string"
+       },
+       "old": {
+        "type": "string"
+       },
+       "new": {
+        "type": "string"
+       },
+       "replace_all": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "path",
+       "old",
+       "new"
+      ],
+      "type": "object"
+     },
+     "type": "array"
+    }
+   },
+   "required": [
+    "edits"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "search",
+  "description": "Search file contents with a regular expression; returns file:line: text.",
+  "inputSchema": {
+   "properties": {
+    "pattern": {
+     "type": "string"
+    },
+    "path": {
+     "default": ".",
+     "type": "string"
+    },
+    "glob": {
+     "default": "*",
+     "type": "string"
+    },
+    "ignore_case": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "pattern"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "find_files",
+  "description": "Find files by filename wildcard, e.g. *.py.",
+  "inputSchema": {
+   "properties": {
+    "pattern": {
+     "type": "string"
+    },
+    "path": {
+     "default": ".",
+     "type": "string"
+    }
+   },
+   "required": [
+    "pattern"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "run",
+  "description": "Run a command in Windows PowerShell and return its output. Use the dedicated tools to list folders, find files, search or read files instead of run. timeout is the total limit (default 120 s, max 900). If it is still running after 40 s, it replies early with a job id and keeps running in the background; get the result with job_status.",
+  "inputSchema": {
+   "properties": {
+    "command": {
+     "type": "string"
+    },
+    "cwd": {
+     "type": "string"
+    },
+    "timeout": {
+     "default": 120,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "command"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "start_process",
+  "description": "Start a long-running program in the background (e.g. a dev server); output goes to a log file.",
+  "inputSchema": {
+   "properties": {
+    "command": {
+     "type": "string"
+    },
+    "cwd": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "command"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "job_status",
+  "description": "Check a background job from run: with id, returns its status and output, waiting up to seconds (max 40) for it to finish; without id, lists all jobs.",
+  "inputSchema": {
+   "properties": {
+    "id": {
+     "type": "integer"
+    },
+    "seconds": {
+     "default": 0,
+     "type": "number"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "stop_job",
+  "description": "Stop a background job from run (including the programs it started).",
+  "inputSchema": {
+   "properties": {
+    "id": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "id"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "open",
+  "description": "Open a file, folder, URL or app with its default program (e.g. calc, notepad).",
+  "inputSchema": {
+   "properties": {
+    "target": {
+     "type": "string"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "target"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "screenshot",
+  "description": "Capture a single window (pass window_id or window; works even when covered) or a monitor. Returns a capture_id (valid 60s) and coordinates relative to the returned image with purple 100px grid lines.",
+  "inputSchema": {
+   "properties": {
+    "grid": {
+     "default": true,
+     "type": "boolean"
+    },
+    "monitor": {
+     "type": "integer"
+    },
+    "window": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "click",
+  "description": "Click at (x, y) of the last screenshot. Prefer click_element or click_text when possible. Set background=true with window_id to post a background window click without moving the mouse, cursor_jump=true with window_id for windows that ignore background clicks (Unity games): the cursor jumps there for a fraction of a second and returns, without activating the window, restore_focus=true to flash-click and restore the previous window/cursor, or capture_id to reject stale snapshots.",
+  "inputSchema": {
+   "properties": {
+    "x": {
+     "type": "integer"
+    },
+    "y": {
+     "type": "integer"
+    },
+    "button": {
+     "default": "left",
+     "type": "string"
+    },
+    "clicks": {
+     "default": 1,
+     "type": "integer"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "background": {
+     "default": false,
+     "type": "boolean"
+    },
+    "cursor_jump": {
+     "default": false,
+     "type": "boolean"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "capture_id": {
+     "type": "string"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "x",
+    "y"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "double_click",
+  "description": "Double-click at screenshot coordinates (x, y).",
+  "inputSchema": {
+   "properties": {
+    "x": {
+     "type": "integer"
+    },
+    "y": {
+     "type": "integer"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "x",
+    "y"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "right_click",
+  "description": "Right-click at screenshot coordinates (x, y).",
+  "inputSchema": {
+   "properties": {
+    "x": {
+     "type": "integer"
+    },
+    "y": {
+     "type": "integer"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "x",
+    "y"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "move",
+  "description": "Move the mouse to screenshot coordinates (x, y).",
+  "inputSchema": {
+   "properties": {
+    "x": {
+     "type": "integer"
+    },
+    "y": {
+     "type": "integer"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "x",
+    "y"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "drag",
+  "description": "Drag from screenshot coordinates (x1, y1) to (x2, y2).",
+  "inputSchema": {
+   "properties": {
+    "x1": {
+     "type": "integer"
+    },
+    "y1": {
+     "type": "integer"
+    },
+    "x2": {
+     "type": "integer"
+    },
+    "y2": {
+     "type": "integer"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "x1",
+    "y1",
+    "x2",
+    "y2"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "type",
+  "description": "Type text at the current keyboard focus (any language). Pass window_id to focus that window first; enter=true presses Enter at the end; restore_focus=true restores the previous window afterwards.",
+  "inputSchema": {
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "enter": {
+     "default": false,
+     "type": "boolean"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "text"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "key",
+  "description": "Press a key or combination, e.g. enter, ctrl+c, alt+tab, win+r. Pass window_id to focus that window first; restore_focus=true restores the previous window afterwards.",
+  "inputSchema": {
+   "properties": {
+    "keys": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "keys"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "scroll",
+  "description": "Scroll a window or inner web container: give amount (positive = up, negative = down) or percent (0-100) to jump directly. Optional window_id focuses the target window and finds its scrollable container; optional screenshot coordinates x, y target a specific area. Automatically falls back to UIA scrolling when mouse wheel leaves the container unmoved, and reports scroll %.",
+  "inputSchema": {
+   "properties": {
+    "amount": {
+     "type": "integer"
+    },
+    "x": {
+     "type": "integer"
+    },
+    "y": {
+     "type": "integer"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "percent": {
+     "type": "number"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "wait",
+  "description": "Wait a number of seconds (max 30).",
+  "inputSchema": {
+   "properties": {
+    "seconds": {
+     "default": 1,
+     "type": "number"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "clipboard_get",
+  "description": "Read text from the clipboard.",
+  "inputSchema": {
+   "properties": {},
+   "type": "object"
+  }
+ },
+ {
+  "name": "clipboard_set",
+  "description": "Put text on the clipboard.",
+  "inputSchema": {
+   "properties": {
+    "text": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "text"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "list_windows",
+  "description": "List all open windows (including minimized ones).",
+  "inputSchema": {
+   "properties": {},
+   "type": "object"
+  }
+ },
+ {
+  "name": "focus_window",
+  "description": "Switch to a window exactly by window_id, or by title (exact match preferred). Stops if the window cannot be focused.",
+  "inputSchema": {
+   "properties": {
+    "title": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "ui_elements",
+  "description": "List clickable buttons, links and input boxes in a window (the active window by default, or pick one by title/window_id). Displays input/combobox/document values (value=\"...\") and states ([checked], [selected], [disabled]). filter matches names and values; include_text=true also lists text, include_offscreen=true includes scrolled-away controls, and offset paginates.",
+  "inputSchema": {
+   "properties": {
+    "window": {
+     "type": "string"
+    },
+    "filter": {
+     "type": "string"
+    },
+    "max": {
+     "default": 150,
+     "type": "integer"
+    },
+    "include_text": {
+     "default": false,
+     "type": "boolean"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "include_offscreen": {
+     "default": false,
+     "type": "boolean"
+    },
+    "offset": {
+     "default": 1,
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "read_window",
+  "description": "Read visible and offscreen text, form field values, and checkbox/radio states from a window in one call. Automatically scopes to the active browser page content (skipping tabs/toolbars); paginate long pages with offset and max_chars.",
+  "inputSchema": {
+   "properties": {
+    "window": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "include_offscreen": {
+     "default": true,
+     "type": "boolean"
+    },
+    "offset": {
+     "default": 0,
+     "type": "integer"
+    },
+    "max_chars": {
+     "default": 12000,
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "click_element",
+  "description": "Click an element listed by ui_elements. Prefer name (copied exactly from the list) over the id. Automatically scrolls offscreen elements into view when possible. Buttons are triggered directly (no mouse movement, works with background windows), and the window's text + diff are returned. restore_focus=true restores the previous window if mouse fallback is needed.",
+  "inputSchema": {
+   "properties": {
+    "id": {
+     "type": "integer"
+    },
+    "name": {
+     "type": "string"
+    },
+    "button": {
+     "default": "left",
+     "type": "string"
+    },
+    "clicks": {
+     "default": 1,
+     "type": "integer"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "click_elements",
+  "description": "Click 1-16 buttons from names in order, all in the window given by window_id. Names must come from the latest ui_elements. Review the whole sequence first; it stops at the first failure and reports how many steps finished. Example for Calculator: names=[\"Clear\",\"One\",\"Two\",\"Multiply by\",\"Three\",\"Equals\"].",
+  "inputSchema": {
+   "properties": {
+    "window_id": {
+     "type": "integer"
+    },
+    "names": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "window_id",
+    "names"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "type_element",
+  "description": "Focus an observed input box from ui_elements, optionally clear existing text (clear=true), type text in one call (enter=true submits), and read back the resulting value. restore_focus=true restores the previous window and cursor afterwards.",
+  "inputSchema": {
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "id": {
+     "type": "integer"
+    },
+    "name": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "clear": {
+     "default": true,
+     "type": "boolean"
+    },
+    "enter": {
+     "default": false,
+     "type": "boolean"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "text"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "ocr_window",
+  "description": "Capture a single window cleanly (even when covered) and run fast native Windows OCR. Returns numbered Set-of-Mark text blocks [1], [2], ... with capture_id (valid 60s) and an annotated image (set overlay=false for text-only). Ideal for games, emulators, canvas, and custom-drawn apps.",
+  "inputSchema": {
+   "properties": {
+    "window": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "filter": {
+     "type": "string"
+    },
+    "overlay": {
+     "default": true,
+     "type": "boolean"
+    },
+    "max": {
+     "default": 120,
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "click_text",
+  "description": "Click OCR-detected text by mark id (from ocr_window) or substring text (auto-OCRs the window if needed). Supports background=true (no mouse movement), cursor_jump=true (brief cursor jump, window not activated; for games that ignore background clicks), restore_focus=true (flash-switch and restore), and capture_id fail-closed staleness checks (60s TTL).",
+  "inputSchema": {
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "id": {
+     "type": "integer"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "button": {
+     "default": "left",
+     "type": "string"
+    },
+    "clicks": {
+     "default": 1,
+     "type": "integer"
+    },
+    "background": {
+     "default": false,
+     "type": "boolean"
+    },
+    "cursor_jump": {
+     "default": false,
+     "type": "boolean"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "capture_id": {
+     "type": "string"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "wait_for",
+  "description": "Wait (up to 30s) until a window, UIA element, visible text, or OCR text (use_ocr=true) appears, or disappears when gone=true. Prefer this over blind wait().",
+  "inputSchema": {
+   "properties": {
+    "window": {
+     "type": "string"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "text": {
+     "type": "string"
+    },
+    "element": {
+     "type": "string"
+    },
+    "gone": {
+     "default": false,
+     "type": "boolean"
+    },
+    "use_ocr": {
+     "default": false,
+     "type": "boolean"
+    },
+    "timeout": {
+     "default": 10,
+     "type": "integer"
+    },
+    "interval": {
+     "default": 0.5,
+     "type": "number"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "gui_batch",
+  "description": "Execute 1-16 GUI steps in one turn (click_element, type_element, click_text, click, key, type, scroll, wait, wait_for, focus_window, ui_elements, ocr_window, read_window). Each step is {\"action\": \"...\", \"args\": {...}} (or flat keys). Stops on first failure; restore_focus=true restores the previous window once after the entire batch.",
+  "inputSchema": {
+   "properties": {
+    "steps": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "window_id": {
+     "type": "integer"
+    },
+    "restore_focus": {
+     "default": false,
+     "type": "boolean"
+    },
+    "screenshot": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "steps"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "zoom",
+  "description": "Zoom into part of the last screenshot (for small text). Does not change click coordinates.",
+  "inputSchema": {
+   "properties": {
+    "x1": {
+     "type": "integer"
+    },
+    "y1": {
+     "type": "integer"
+    },
+    "x2": {
+     "type": "integer"
+    },
+    "y2": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "x1",
+    "y1",
+    "x2",
+    "y2"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "name": "list_backups",
+  "description": "List backups made by write_file / edit_file (newest first); path limits it to a file or folder.",
+  "inputSchema": {
+   "properties": {
+    "limit": {
+     "default": 20,
+     "type": "integer"
+    },
+    "path": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "name": "restore_backup",
+  "description": "Restore a file to a backup (backup_id from list_backups). If the file did not exist before, restoring deletes it. The current content is backed up first, so a restore can be undone.",
+  "inputSchema": {
+   "properties": {
+    "backup_id": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "backup_id"
+   ],
+   "type": "object"
+  }
+ }
+]

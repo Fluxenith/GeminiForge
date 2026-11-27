@@ -1,0 +1,452 @@
+{
+  "description": {
+    "message": "让 Gemini 网页通过本机 GeminiForge 服务器读写文件、运行指令与操作电脑。"
+  },
+  "language": {
+    "message": "语言"
+  },
+  "mode": {
+    "message": "运行模式"
+  },
+  "enabled": {
+    "message": "启用"
+  },
+  "manual": {
+    "message": "每一步都要确认"
+  },
+  "readonly": {
+    "message": "只读工具自动运行，其余需确认"
+  },
+  "auto": {
+    "message": "全部自动运行"
+  },
+  "modeNote": {
+    "message": "此模式只控制插件 JSON 工具；MCP 授权仍由 Gemini 确认。"
+  },
+  "autoPrompt": {
+    "message": "新对话自动添加工具说明"
+  },
+  "autoHint": {
+    "message": "在新对话送出第一则消息时，自动在前面加上工具说明"
+  },
+  "notify": {
+    "message": "回复完成时通知"
+  },
+  "notifyHint": {
+    "message": "Gemini 回复完成、需要你确认或出错时弹出桌面通知。“仅在离开标签页时”：你切到别的标签页或程序才通知；“始终通知”：看着这个标签页也通知"
+  },
+  "notifyOff": {
+    "message": "关闭"
+  },
+  "notifyAway": {
+    "message": "仅在离开标签页时"
+  },
+  "notifyAlways": {
+    "message": "始终通知"
+  },
+  "notifyReply": {
+    "message": "Gemini 已回复完成"
+  },
+  "notifyTest": {
+    "message": "测试通知"
+  },
+  "notifyTestBody": {
+    "message": "这是 GeminiForge 的测试通知。"
+  },
+  "notifyTestSent": {
+    "message": "已发送测试通知。没看到的话，请检查 Windows 的通知设置和“勿扰”。"
+  },
+  "notifyFailed": {
+    "message": "通知失败：{detail}"
+  },
+  "prompt": {
+    "message": "插入工具说明"
+  },
+  "stop": {
+    "message": "停止"
+  },
+  "shot": {
+    "message": "测试截屏"
+  },
+  "reload": {
+    "message": "重新加载插件并刷新页面"
+  },
+  "run": {
+    "message": "运行"
+  },
+  "always": {
+    "message": "本对话都允许"
+  },
+  "alwaysHint": {
+    "message": "这个对话里同一个工具不再询问"
+  },
+  "skip": {
+    "message": "略过"
+  },
+  "halt": {
+    "message": "全部停止"
+  },
+  "idle": {
+    "message": "待命中"
+  },
+  "disabled": {
+    "message": "已关闭"
+  },
+  "noResponse": {
+    "message": "没有回应"
+  },
+  "updated": {
+    "message": "插件已更新，请刷新此页面。"
+  },
+  "noEditor": {
+    "message": "找不到 Gemini 输入框"
+  },
+  "noUpload": {
+    "message": "找不到上传按钮"
+  },
+  "noImageInput": {
+    "message": "找不到图片上传字段"
+  },
+  "consent": {
+    "message": "请在 Gemini 的上传同意窗口按「同意」。"
+  },
+  "missingImage": {
+    "message": "图片没有出现在输入框"
+  },
+  "cancelSend": {
+    "message": "输入模式或对话已变更，已取消发送"
+  },
+  "sendTimeout": {
+    "message": "发送按钮无法使用，图片可能仍在上传"
+  },
+  "generating": {
+    "message": "Gemini 回复中…"
+  },
+  "stalled": {
+    "message": "Gemini 超过 {s} 秒没有响应，已停止并重新请求"
+  },
+  "stallNudge": {
+    "message": "[GeminiForge] 上一条回复卡住，没有生成任何内容。请根据上面最新的结果继续下一步。"
+  },
+  "stallGiveUp": {
+    "message": "Gemini 连续卡住没有回复，请查看页面后手动发送消息继续"
+  },
+  "completed": {
+    "message": "完成（共 {n} 轮工具调用）"
+  },
+  "error": {
+    "message": "错误：{detail}"
+  },
+  "continueRounds": {
+    "message": "已连续运行 {n} 轮，要继续吗？"
+  },
+  "stopped": {
+    "message": "已停止"
+  },
+  "waiting": {
+    "message": "等待你确认：{tool}"
+  },
+  "confirmTool": {
+    "message": "第 {i}/{n} 个工具：{tool}"
+  },
+  "userStop": {
+    "message": "用户停止"
+  },
+  "allowed": {
+    "message": "本对话允许 {tool}"
+  },
+  "denied": {
+    "message": "用户拒绝运行这个工具。请改用别的方法，或询问用户。"
+  },
+  "skipped": {
+    "message": "略过 {tool}"
+  },
+  "running": {
+    "message": "运行中：{tool}"
+  },
+  "returned": {
+    "message": "已回传结果（第 {n} 轮），等待 Gemini…"
+  },
+  "result": {
+    "message": "[GeminiForge 结果]"
+  },
+  "uploading": {
+    "message": "上传截屏中…"
+  },
+  "lastShot": {
+    "message": "已附上运行 {tool} 后的最后一张截屏。"
+  },
+  "latestShot": {
+    "message": "已附上最新截屏。"
+  },
+  "failedShot": {
+    "message": "截屏上传失败：{detail}"
+  },
+  "next": {
+    "message": "请根据结果继续下一步。任务完成就用文本总结，不要再输出工具区块。"
+  },
+  "noPrompt": {
+    "message": "读不到工具说明"
+  },
+  "request": {
+    "message": "我的需求："
+  },
+  "injected": {
+    "message": "已自动带入工具说明"
+  },
+  "injectFailed": {
+    "message": "自动带入工具说明失败：{detail}"
+  },
+  "busy": {
+    "message": "运行中，请先按停止"
+  },
+  "hasPrompt": {
+    "message": "输入框里已经有工具说明了"
+  },
+  "inserted": {
+    "message": "已插入工具说明，请输入需求后发送。"
+  },
+  "testing": {
+    "message": "截屏测试中…"
+  },
+  "attached": {
+    "message": "截屏已放进输入框（尚未送出）"
+  },
+  "connected": {
+    "message": "本机服务器已连接（{cwd}）"
+  },
+  "offline": {
+    "message": "本机服务器未启动，请运行 start.bat。"
+  },
+  "dialogTitle": {
+    "message": "GeminiForge 确认"
+  },
+  "dialogAsk": {
+    "message": "Gemini 想要运行：{tool}"
+  },
+  "allow": {
+    "message": "允许"
+  },
+  "allowTimed": {
+    "message": "30 分钟内都允许这个工具"
+  },
+  "deny": {
+    "message": "拒绝"
+  },
+  "countdown": {
+    "message": "{n} 秒后自动拒绝"
+  },
+  "authTitle": {
+    "message": "GeminiForge 授权"
+  },
+  "linkApp": {
+    "message": "连接 GeminiForge"
+  },
+  "accessRequest": {
+    "message": "“{client}”请求操作此电脑，包括读写文件、运行命令及控制鼠标和键盘。"
+  },
+  "pairCode": {
+    "message": "请输入 GeminiForge 服务器窗口显示的配对码。"
+  },
+  "allowLink": {
+    "message": "允许连接"
+  },
+  "redirectTo": {
+    "message": "授权后将返回 {dest}"
+  },
+  "wrongCode": {
+    "message": "配对码不正确。"
+  },
+  "tooMany": {
+    "message": "错误次数过多，请在 10 分钟后重试。"
+  },
+  "unknownClient": {
+    "message": "未知的 client_id"
+  },
+  "badRedirect": {
+    "message": "不允许的 redirect_uri"
+  },
+  "onlyCode": {
+    "message": "仅支持 response_type=code"
+  },
+  "needPkce": {
+    "message": "公共客户端必须使用 PKCE"
+  },
+  "srvPortInUse": {
+    "message": "错误：端口 {port} 已被其他程序占用。可设置环境变量 GF_PORT 换一个端口（插件的 manifest.json 和 background.js 也要一起改）。"
+  },
+  "pressEnterToExit": {
+    "message": "按 Enter 退出..."
+  },
+  "srvStarted": {
+    "message": "GeminiForge 本地服务器已启动：{url}"
+  },
+  "srvCwd": {
+    "message": "默认工作文件夹：{path}"
+  },
+  "srvStop": {
+    "message": "紧急停止：把鼠标用力甩到屏幕任一角落。关闭这个窗口即停止服务器。"
+  },
+  "mcpTitle": {
+    "message": "GeminiForge MCP 服务器（供 Gemini 的 @ 自定义应用使用）"
+  },
+  "mcpUrl": {
+    "message": "MCP 地址：{url}"
+  },
+  "mcpNoTailscale": {
+    "message": "（未检测到 Tailscale 地址）"
+  },
+  "mcpPairCode": {
+    "message": "配对码：{code}"
+  },
+  "mcpApproval": {
+    "message": "确认模式：{mode}（可在 server/mcp_config.json 修改）"
+  },
+  "mcpWebConfirm": {
+    "message": "Gemini 网页确认：{mode}"
+  },
+  "mcpNoPopup": {
+    "message": "无法显示确认窗口（{why}），需要确认的操作都会被拒绝。请安装 zenity，或把 server/mcp_config.json 的 \"approval\" 改成 \"none\"。"
+  },
+  "srvStopPlain": {
+    "message": "按 Ctrl+C 或关闭这个窗口即停止服务器。"
+  },
+  "mcpStopPlain": {
+    "message": "按 Ctrl+C 或关闭这个窗口即停止。"
+  },
+  "mcpTunnelStarting": {
+    "message": "正在启动 cloudflared 快速通道..."
+  },
+  "mcpTunnelQuick": {
+    "message": "快速通道：每次启动服务器网址都会变。每次启动后，请把新的 URL 填进 Gemini 的自定义应用，再配对一次。"
+  },
+  "mcpTunnelMissing": {
+    "message": "找不到 cloudflared。请先安装（Windows：winget install Cloudflare.cloudflared，macOS：brew install cloudflared，Linux：到 Cloudflare 下载页获取软件包），或把 server/mcp_config.json 的 \"tunnel\" 改回 \"tailscale\"。"
+  },
+  "mcpTunnelFailed": {
+    "message": "cloudflared 在 30 秒内没有返回通道网址。请检查网络连接后再试一次。"
+  },
+  "mcpStop": {
+    "message": "紧急停止鼠标操作：把鼠标用力甩到屏幕角落。关闭此窗口即停止。"
+  },
+  "mcpClientRegistered": {
+    "message": "OAuth 客户端已注册：{name}（{hosts}）"
+  },
+  "mcpWrongCode": {
+    "message": "有人输入了错误的配对码"
+  },
+  "mcpLinked": {
+    "message": "已授权“{name}”连接"
+  },
+  "mcpDenied": {
+    "message": "用户拒绝了 {tool}"
+  },
+  "mcpPortInUse": {
+    "message": "错误：端口 {port} 已被其他程序使用。可设置环境变量 GF_MCP_PORT 换一个端口。"
+  },
+  "bkTooLarge": {
+    "message": "（文件超过 {mb} MB，没有备份内容）"
+  },
+  "bkSaved": {
+    "message": "（已备份，编号 {id}，可用 restore_backup 恢复）"
+  },
+  "bkNone": {
+    "message": "没有备份记录。"
+  },
+  "bkWasMissing": {
+    "message": "原本不存在（恢复＝删除该文件）"
+  },
+  "bkNotCopied": {
+    "message": "太大未备份"
+  },
+  "bkHeader": {
+    "message": "最新的在最上面："
+  },
+  "bkBadId": {
+    "message": "备份编号格式不对：{id}（例如 20261103-011819-001）"
+  },
+  "bkNotFound": {
+    "message": "找不到备份 {id}，先用 list_backups 查编号。"
+  },
+  "bkNoContent": {
+    "message": "备份 {id} 没有内容（原文件太大），无法恢复。"
+  },
+  "bkRestored": {
+    "message": "已把 {path} 恢复到 {time} 之前的内容"
+  },
+  "bkDeleted": {
+    "message": "{path} 原本不存在，已删除（内容已备份）"
+  },
+  "bkNothing": {
+    "message": "{path} 原本不存在，现在也不存在，不需要恢复"
+  },
+  "bkUndo": {
+    "message": "{msg}。若要撤销这次恢复：restore_backup {id}"
+  },
+  "usage": {
+    "message": "用量"
+  },
+  "usageNone": {
+    "message": "尚未读取，按 ↻"
+  },
+  "usageLoading": {
+    "message": "正在读取 gemini.google.com/usage…"
+  },
+  "usageFailed": {
+    "message": "无法读取用量页面"
+  },
+  "usageUpdated": {
+    "message": "更新于 {time}"
+  },
+  "usageRefresh": {
+    "message": "刷新用量（会在后台标签页打开 gemini.google.com/usage 几秒钟）"
+  },
+  "usageLimit": {
+    "message": "已达 Gemini 用量上限，重置前可能无法回复。"
+  },
+  "handoff": {
+    "message": "换账号继续"
+  },
+  "handoffHint": {
+    "message": "在这个浏览器已登录的另一个 Google 账号打开新对话，带入原始需求和目前进度接着做。百分比是该账号最近一次在这里读到的用量。读不到账号列表时以编号显示：账号 1 是默认账号，其余按登录顺序。"
+  },
+  "handoffAccount": {
+    "message": "账号 {n}"
+  },
+  "handoffCollecting": {
+    "message": "正在加载对话记录…（{n} 条，按停止可取消）"
+  },
+  "handoffNoTask": {
+    "message": "（原始需求没有加载。请从下面的记录判断任务目标；无法确定时，先询问用户再动手。）"
+  },
+  "handoffOpened": {
+    "message": "已在 {name} 打开新对话继续任务"
+  },
+  "handoffResuming": {
+    "message": "正在接续另一个账号的任务…"
+  },
+  "handoffResumed": {
+    "message": "已发送交接内容，等待 Gemini…"
+  },
+  "handoffWrongAccount": {
+    "message": "{name} 没有登录这个浏览器，已取消交接"
+  },
+  "handoffIntro": {
+    "message": "[GeminiForge 交接] 这个任务原本在另一个对话中进行，因为达到用量上限而中断，现在由你接手。下面是原始需求（TASK）和到目前为止的过程记录（LOG；较早的内容已截短或省略，之前的截图没有附上）。已经写入的文件和运行过的命令，结果都还留在这台电脑上。"
+  },
+  "handoffSkipped": {
+    "message": "（已省略较早的 {n} 条消息）"
+  },
+  "handoffNext": {
+    "message": "请先用工具确认目前的实际状态（需要时重新读取文件或截图），再从中断的地方继续，不要重做已经完成的步骤。"
+  },
+  "handoffNoAccount": {
+    "message": "这个浏览器没有登录其他 Google 账号"
+  },
+  "handoffPartial": {
+    "message": "对话开头没有加载，交接内容不含原始需求"
+  },
+  "handoffEmpty": {
+    "message": "这个对话还没有内容可以交接"
+  }
+}

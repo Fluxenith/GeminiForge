@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "GeminiForge",
+  "version": "1.3.0",
+  "default_locale": "en",
+  "description": "__MSG_description__",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "permissions": ["storage", "notifications"],
+  "host_permissions": ["http://127.0.0.1:18765/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["languages.js", "content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["page.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}
